@@ -196,10 +196,10 @@ focus.drive(200)
  */
 function isEvenNumberAsync(number) {
   // ✨ implement
-  if (number % 2 === 0) {
-    return Promise.resolve(true)
+  if (typeof number !== 'number' || isNaN(number)) {
+    throw new Error('number must be a number')
   }
-  return Promise.resolve(false)
+  return number % 2 === 0 || false
 }
 
 module.exports = {
