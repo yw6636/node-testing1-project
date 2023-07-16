@@ -129,6 +129,7 @@ describe('[Exercise 6] Car', () => {
     expect(focus.drive(100)).toBe(200)
     expect(focus.drive(100)).toBe(300)
     expect(focus.drive(200)).toBe(500)
+    expect(focus.drive(200)).toBe(600)
   })
   test('[16] driving the car uses gas', () => {
     focus.drive(600)
@@ -138,14 +139,28 @@ describe('[Exercise 6] Car', () => {
     expect(focus.tank).toBe(0)
   })
   test('[17] refueling allows to keep driving', () => {
-    
+    focus.drive(600)
+    focus.refuel(10)
+    focus.drive(600)
+    expect(focus.odometer).toBe(900)
+    focus.refuel(20)
+    focus.drive(600)
+    expect(focus.odometer).toBe(1500)
   })
   test('[18] adding fuel to a full tank has no effect', () => {
-
+    focus.refuel(2000000)
+    focus.drive(10000)
+    expect(focus.odometer).toBe(600)
   })
 })
 
 describe('[Exercise 7] isEvenNumberAsync', () => {
   // test('[19] resolves true if passed an even number', () => {})
   // test('[20] resolves false if passed an odd number', () => {})
+  test('[19] resolves true if passed an even number', () => {
+    
+  })
+  test('[20] resolves false if passed an odd number', () => {
+
+  })
 })
